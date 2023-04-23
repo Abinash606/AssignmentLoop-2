@@ -1,0 +1,228 @@
+import java.util.Scanner;
+
+public class Assignment {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+//        Q1 - Write a program to print Fibonacci series of n terms where n is input by user.
+/*        System.out.println("Enter The Number You Want To Check It Fibonacci :");
+        int n = sc.nextInt();
+        int a = 1;
+        int b = 1;
+        for (int i = 1; i <= n; i++){
+            System.out.println(a + " ");
+            int sum  = a+b;
+            a = b;
+            b = sum;
+        }
+
+ */
+   /*     Q2 - Write a program to enter the numbers till the user wants, the number can be positive,
+        negative or zero. Calculate the sum of numbers until a negative number is encountered. I
+        f the input is a negative number, current sum is discarded and print -1.
+
+
+        System.out.println("Enter The Number :");
+        int sum = 0;
+        while (sc.hasNext()) {
+            int number = sc.nextInt();
+            if (number >= 0) {
+                sum += number;
+            } else {
+                sum = -1;
+                break;
+            }
+        }
+        System.out.println(sum);
+
+    */
+/*
+        Q3- Write a program to calculate the factorial of a number.
+
+
+        System.out.println("Enter The Number Through Which You Want Factorial :");
+        int factorialNumber = sc.nextInt();
+        int ans = 1;
+        for (int i = 2; i <= factorialNumber ; i++){
+            ans *= i;
+        }
+        System.out.println(ans);
+
+ */
+        /*
+      Q4- Write a program to print all Armstrong numbers between 1 to n.
+
+        int armstrongNumber = sc.nextInt();
+        int number = 1;
+        while (number <= armstrongNumber){
+            int count = 0;
+            int i = number;
+            while (i>0){
+                count++;
+                i /= 10;
+            }
+            int val = number;
+            int sum = 0;
+            while (val > 0){
+                int digit = val%10;
+                sum += Math.pow(digit,count);
+                val /= 10;
+                if (sum > val){
+                    continue;
+                }
+
+            }
+            if (sum == number){
+                System.out.println(number);
+            }
+            number++;
+
+        }
+
+         */
+        /*
+        Q5 – Write a program to print the cross pattern given below (in the shape of X):
+
+        int size = 5;
+        for (int i = 0; i<size; i++){
+            for (int j = 0; j<size;j++){
+                if (i == j || i + j == size-1){
+                    System.out.print("*");
+                }
+                else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+
+         */
+       /*
+        Q6- Write a program to print alphabet diamond pattern:
+
+        int size1 = 5;
+        int alpha = 65;
+        int num = 0;
+        for (int i = 0; i <= size1; i++) {
+            for (int j = size1; j > i; j--) {
+                System.out.print(" ");
+            }
+            for (int k = 0; k < i * 2 - 1; k++) {
+                System.out.print((char) (alpha + num++));
+            }
+            num = 0;
+            System.out.println();
+        }
+        for (int i = 1; i <= size1 - 1; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print(" ");
+            }
+            for (int k = (size1 - i) * 2 - 1; k > 0; k--) {
+                System.out.print((char) (alpha + num++));
+            }
+            num = 0;
+            System.out.println();
+        }
+
+        */
+/*
+      Q7- Write a program to print pattern given below :
+
+        int size3 = 5;
+        for (int i = 0; i < size3;i++){
+            for (int j = 0;j <size3;j++){
+                if (i == size3/2){
+                    System.out.print("*");
+                }else if (j == size3/2){
+                    System.out.print("*");
+                }
+                else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+
+ */
+        /*
+        Q8. Write a program to print a triangle of prime numbers upto given number of lines of the triangle.
+         */
+        Scanner scn = new Scanner(System.in);
+        int x1;
+        int x2;
+        int x3;
+        int number = 3;
+        int banner = 0;
+        x1 = scn.nextInt();
+        int d = x1;
+        for (x2 = 1; x2 <= x1; x2++) {
+            for (int e = 1; e <= d; e++) {
+                System.out.print(" ");
+            }
+            if (x2 == 1) {
+                System.out.print("2");
+            } else {//other lines
+                for (x3 = 0; x3 != x2; ) {
+                    banner = 0;
+                    for (int k = 2; k < number; k++) {
+                        if ((number % k) == 0)
+                            banner = 1;
+                    }
+                    if (banner == 0) {
+                        x3++;
+                        System.out.print(number + " ");
+                    }
+                    number++;
+                }
+            }
+            System.out.println();
+            d--;
+        }
+
+
+        /*
+        Q9 Write a program to check whether a prime Number can be expressed as a Sum of Two Prime Numbers.
+        Hint: Apart from 2, all of the prime numbers are odd. So it is not possible to represent a prime number
+        (which is odd) to be written as a sum of two odd prime numbers, so we are sure that one of the two
+        prime numbers should be 2. So we have to check whether n-2 is prime or not.
+
+        int n = sc.nextInt();
+        if(isPrime(n) && isPrime(n-2)){
+            System.out.print(true);
+        }
+        else
+        {
+            System.out.print(false);
+        }
+    }
+    public static boolean isPrime(int n) {
+        if (n <= 1)
+            return false;
+        for (int i = 2; i * i <= n; i++) {
+            if (n % i == 0)
+                return false;
+        }
+        return true;
+    }
+
+         */
+
+
+/*
+        Q10. You are given n number of bulbs. They are all switched off. A weird fluctuation in voltage hits
+        the circuit n times. In the 1st fluctuation all bulbs are toggled, in the 2nd fluctuation every 2nd bulb
+        is toggled, in the 3rd fluctuation every 3rd bulb is toggled and so on. You've to find which bulbs will
+        be switched on after n fluctuations.
+        Take as input a number n, representing the number of bulbs.
+        Print all the bulbs that will be on after the nth fluctuation in voltage.
+
+
+        int n = sc.nextInt();
+        for (int i = 1; i*i <= n; i++){
+            System.out.print(i*i +" ");
+        }
+
+ */
+
+    }
+
+    }
